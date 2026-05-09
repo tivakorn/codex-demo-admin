@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: 48 18% 84%;
+  --foreground: 252 27% 18%;
+  --card: 48 23% 91%;
+  --card-foreground: 252 27% 18%;
+  --popover: 48 23% 91%;
+  --popover-foreground: 252 27% 18%;
+  --primary: 244 27% 31%;
+  --primary-foreground: 42 44% 92%;
+  --secondary: 252 18% 88%;
+  --secondary-foreground: 252 27% 18%;
+  --muted: 48 14% 76%;
+  --muted-foreground: 252 12% 38%;
+  --accent: 270 35% 88%;
+  --accent-foreground: 244 27% 31%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 42 44% 92%;
+  --border: 252 12% 66%;
+  --input: 252 12% 72%;
+  --ring: 244 27% 31%;
+  --chart-1: 244 27% 31%;
+  --chart-2: 273 36% 50%;
+  --chart-3: 202 38% 43%;
+  --chart-4: 36 49% 52%;
+  --chart-5: 332 34% 50%;
+  --radius: 0.9rem;
+  --mac-platinum: #d8d7d0;
+  --brand-purple: #3c3963;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-color: var(--mac-platinum);
+    background-image:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0 25%, transparent 25% 50%, rgba(0, 0, 0, 0.035) 50% 75%, transparent 75%),
+      radial-gradient(circle at top left, rgba(60, 57, 99, 0.14), transparent 34rem);
+    background-size: 9px 9px, auto;
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+}
